@@ -38,6 +38,12 @@ class TestDialog(QDockWidget):
 
         self.resize(500, 550)
 
+    def creatwidget(self):
+        self.
+
+    def creatlayout(self):
+
+
 
 
 
