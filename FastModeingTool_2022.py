@@ -25,23 +25,33 @@ class TestDialog(QDockWidget):
         # 经典类的写法： 父类名称.__init__(self, 参数1，参数2，...)
         # 新式类的写法：super(子类，self).__init__(参数1，参数2，....)
         # 当testDialog被实例化之后，调用顺序  自己的__init__ ——> 父类__init__
-        super(TestDialog, self).__init__(parent)#经典写法，继承父类的构造函数,也就是拥有父类的属性和方法
-        loader = QUiLoader()#QuiLoder类 主要负责加载UI外部文件
+        # 经典写法，继承父类的构造函数,也就是拥有父类的属性和方法
+        super(TestDialog, self).__init__(parent)
+
+        # 实列化QuiLoder对象， 主要负责加载UI外部文件
+        loader = QUiLoader()
         ui_file_path = os.path.join(  os.path.dirname(os.path.realpath(__file__)), 'ui/ui.ui')
-        ui_file = QFile(ui_file_path)#打开文件
-        ui_file.open(QFile.ReadOnly)#文件只读
-        self.ui = loader.load(ui_file, self)#导入ui内部的信息
+
+        # 打开文件
+        ui_file = QFile(ui_file_path)
+
+        # 文件只读
+        ui_file.open(QFile.ReadOnly)
+
+        # 导入ui内部的信息
+        self.ui = loader.load(ui_file, self)
         ui_file.close()
-        #-----
-        self.setWindowFlags(QtCore.Qt.Tool)#设置窗口属性，枚举
+
+
+        # 设置窗口属性
+        self.setWindowFlags(QtCore.Qt.Tool)
         self.setWindowTitle("技术中心_FastMdeingToolv1.0")
 
-        self.resize(500, 550)
+        self.resize(484, 434)
 
-    def creatwidget(self):
-        self.
+   # def creatwidget(self):
 
-    def creatlayout(self):
+   #  def creatlayout(self):
 
 
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>363</width>
-    <height>456</height>
+    <width>484</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -288,79 +288,6 @@
              <string>PushButton</string>
             </property>
            </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_6">
-         <property name="title">
-          <string>GroupBox</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
-             <widget class="QPushButton" name="pushButton_24">
-              <property name="text">
-               <string>FBX输出设置</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_23">
-              <property name="text">
-               <string>面板设置</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_7">
-              <item>
-               <widget class="QLineEdit" name="lineEdit"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_2"/>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0">
-            <item>
-             <widget class="QPushButton" name="pushButton_26">
-              <property name="text">
-               <string>FBX导出-角色</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkBox">
-              <property name="text">
-               <string>Y轴朝上</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,0">
-            <item>
-             <widget class="QPushButton" name="pushButton_27">
-              <property name="text">
-               <string>FBX导出-批量场景</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkBox_2">
-              <property name="text">
-               <string>Y轴朝上</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
           </item>
          </layout>
         </widget>
