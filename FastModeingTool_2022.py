@@ -47,7 +47,7 @@ class TestDialog(QDockWidget):
         self.setWindowFlags(QtCore.Qt.Tool)
         self.setWindowTitle("技术中心_FastMdeingToolv1.0")
 
-        self.resize(484, 434)
+        self.resize(316, 478)
 
    # def creatwidget(self):
 

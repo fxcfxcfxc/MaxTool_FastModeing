@@ -6,45 +6,67 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>484</width>
-    <height>434</height>
+    <width>316</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_4">
-   <item>
+  <layout class="QGridLayout" name="gridLayout_6">
+   <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
+      <property name="styleSheet">
+       <string notr="true">
+QGroupBox
+{
+border: 2px solid red;
+border-radius:5px;
+margin-top:2ex;//文字在方框中位置的偏离度
+font-family:楷体;
+font:bold 28px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+      </property>
       <attribute name="title">
        <string>模型模块</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
         <widget class="QGroupBox" name="groupBox">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="title">
           <string>坐标系</string>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
            <widget class="QRadioButton" name="radioButton_3">
             <property name="text">
              <string>local（本地）</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="0" column="1">
            <widget class="QRadioButton" name="radioButton_2">
             <property name="text">
              <string>world（世界）</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="0">
            <widget class="QRadioButton" name="radioButton">
             <property name="text">
              <string>view（观察）</string>
@@ -54,7 +76,7 @@
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
            <widget class="QRadioButton" name="radioButton_8">
             <property name="text">
              <string>screen（屏幕）</string>
@@ -64,13 +86,13 @@
          </layout>
         </widget>
        </item>
-       <item>
+       <item row="1" column="0">
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
           <string>约束方式</string>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
            <widget class="QRadioButton" name="radioButton_4">
             <property name="text">
              <string>None（无）</string>
@@ -80,21 +102,21 @@
             </property>
            </widget>
           </item>
-          <item>
+          <item row="0" column="1">
            <widget class="QRadioButton" name="radioButton_5">
             <property name="text">
              <string>point（点）</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="0">
            <widget class="QRadioButton" name="radioButton_6">
             <property name="text">
              <string>edge（边）</string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
            <widget class="QRadioButton" name="radioButton_7">
             <property name="text">
              <string>face（面）</string>
@@ -104,7 +126,7 @@
          </layout>
         </widget>
        </item>
-       <item>
+       <item row="2" column="0">
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
           <string>锁定物体旋转/缩放/移动</string>
@@ -127,23 +149,23 @@
          </layout>
         </widget>
        </item>
-       <item>
+       <item row="3" column="0">
         <widget class="QGroupBox" name="groupBox_5">
          <property name="title">
           <string>变换</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_18">
-            <property name="text">
-             <string>复制</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0">
            <widget class="QPushButton" name="pushButton_21">
             <property name="text">
              <string>塌陷</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="text">
+             <string>复制</string>
             </property>
            </widget>
           </item>
@@ -161,15 +183,15 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="pushButton_20">
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pushButton_25">
             <property name="text">
              <string>PushButton</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_25">
+          <item row="1" column="2">
+           <widget class="QPushButton" name="pushButton_20">
             <property name="text">
              <string>PushButton</string>
             </property>
@@ -178,19 +200,12 @@
          </layout>
         </widget>
        </item>
-       <item>
+       <item row="4" column="0">
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
           <string>多边形</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_3">
-            <property name="text">
-             <string>Cut切割</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="1">
            <widget class="QPushButton" name="pushButton_4">
             <property name="text">
@@ -198,24 +213,10 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton_5">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_3">
             <property name="text">
-             <string>Merge合并点</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="pushButton_6">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="4">
-           <widget class="QPushButton" name="pushButton_7">
-            <property name="text">
-             <string>PushButton</string>
+             <string>Cut切割</string>
             </property>
            </widget>
           </item>
@@ -233,24 +234,10 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="pushButton_8">
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pushButton_5">
             <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="4">
-           <widget class="QPushButton" name="pushButton_10">
-            <property name="text">
-             <string>PushButton</string>
+             <string>Merge合并点</string>
             </property>
            </widget>
           </item>
@@ -268,22 +255,15 @@
             </property>
            </widget>
           </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
           <item row="2" column="2">
            <widget class="QPushButton" name="pushButton_15">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3">
-           <widget class="QPushButton" name="pushButton_16">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="4">
-           <widget class="QPushButton" name="pushButton_17">
             <property name="text">
              <string>PushButton</string>
             </property>
@@ -293,6 +273,11 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>导出</string>
+      </attribute>
      </widget>
     </widget>
    </item>
