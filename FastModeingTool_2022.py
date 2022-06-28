@@ -366,13 +366,13 @@ class TestDialog(QDockWidget):
 if __name__ == '__main__':
 
     try:
-        tool_window.close()
-        tool_window.deleteLater()
+        Fasttool_window.close()
+        Fasttool_window.deleteLater()
 
     except:
         pass
     main_window2 = qtmax.GetQMaxMainWindow()
-    tool_window = TestDialog(parent=main_window2)
-    tool_window.setFloating(True)
-    tool_window.show()
+    Fasttool_window= TestDialog(parent=main_window2)
+    Fasttool_window.setFloating(True)
+    Fasttool_window.show()
 
