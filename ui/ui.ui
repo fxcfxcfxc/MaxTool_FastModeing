@@ -2,22 +2,28 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>316</width>
-    <height>478</height>
+    <width>233</width>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_6">
-   <item row="0" column="0">
+  <layout class="QGridLayout" name="gridLayout_5">
+   <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
@@ -40,10 +46,10 @@ padding:0 3px;
 }</string>
       </property>
       <attribute name="title">
-       <string>模型模块</string>
+       <string>模型</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="styleSheet">
           <string notr="true"/>
@@ -86,7 +92,7 @@ padding:0 3px;
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
           <string>约束方式</string>
@@ -105,7 +111,7 @@ padding:0 3px;
           <item row="0" column="1">
            <widget class="QRadioButton" name="radioButton_5">
             <property name="text">
-             <string>point（点）</string>
+             <string>normal（点法线）</string>
             </property>
            </widget>
           </item>
@@ -126,7 +132,7 @@ padding:0 3px;
          </layout>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
           <string>锁定物体旋转/缩放/移动</string>
@@ -149,13 +155,13 @@ padding:0 3px;
          </layout>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item>
         <widget class="QGroupBox" name="groupBox_5">
          <property name="title">
           <string>变换</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QPushButton" name="pushButton_21">
             <property name="text">
              <string>塌陷</string>
@@ -176,31 +182,31 @@ padding:0 3px;
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="2" column="2">
+           <widget class="QPushButton" name="pushButton_20">
+            <property name="text">
+             <string>物体位置归零</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
            <widget class="QPushButton" name="pushButton_22">
             <property name="text">
              <string>Xform</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
+          <item row="2" column="1">
            <widget class="QPushButton" name="pushButton_25">
             <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="pushButton_20">
-            <property name="text">
-             <string>PushButton</string>
+             <string>坐标到中心</string>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
           <string>多边形</string>
@@ -209,35 +215,35 @@ padding:0 3px;
           <item row="0" column="1">
            <widget class="QPushButton" name="pushButton_4">
             <property name="text">
-             <string>Loopedge循环边</string>
+             <string>LoopEdge</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="pushButton_3">
             <property name="text">
-             <string>Cut切割</string>
+             <string>Cut</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
            <widget class="QPushButton" name="pushButton_12">
             <property name="text">
-             <string>PushButton</string>
+             <string>Remove</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="pushButton_11">
             <property name="text">
-             <string>PushButton</string>
+             <string>TargetWeld</string>
             </property>
            </widget>
           </item>
           <item row="0" column="2">
            <widget class="QPushButton" name="pushButton_5">
             <property name="text">
-             <string>Merge合并点</string>
+             <string>MergePoint</string>
             </property>
            </widget>
           </item>
@@ -258,7 +264,7 @@ padding:0 3px;
           <item row="1" column="2">
            <widget class="QPushButton" name="pushButton_8">
             <property name="text">
-             <string>PushButton</string>
+             <string>Relax</string>
             </property>
            </widget>
           </item>
@@ -272,12 +278,257 @@ padding:0 3px;
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="title">
+          <string>Max文件</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QPushButton" name="pushButton_23">
+            <property name="text">
+             <string>打开项目文件夹</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_16">
+            <property name="text">
+             <string>同目录保存备份文件（_backup.max）</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>快速保存选中的模型为(_select.max)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>导出</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>导出设置</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="text">
+             <string>FBX导出设置</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="text">
+             <string>选择路径</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>路径</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>导出名字</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>导出模式</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>场景名字前缀</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_3">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QPushButton" name="pushButton_9">
+              <property name="text">
+               <string>FBX_角色</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkBox">
+              <property name="text">
+               <string>Y轴 朝上</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="pushButton_10">
+              <property name="text">
+               <string>FBX_场景</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkBox_2">
+              <property name="text">
+               <string>Y轴 朝上</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>材质UV</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGroupBox" name="">
+         <property name="title">
+          <string>Material(材质)</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_24">
+            <property name="text">
+             <string>单一材质</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_26">
+            <property name="text">
+             <string>复合材质(M_name)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_27">
+            <property name="text">
+             <string>清除材质</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_28">
+            <property name="text">
+             <string>清除材质颜色</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="">
+         <property name="title">
+          <string>UV</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushButton_29">
+            <property name="text">
+             <string>UV</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_30">
+            <property name="text">
+             <string>Bake</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
