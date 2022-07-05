@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>233</width>
-    <height>428</height>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
@@ -98,7 +98,7 @@ padding:0 3px;
           <string>约束方式</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
+          <item row="1" column="0">
            <widget class="QRadioButton" name="radioButton_4">
             <property name="text">
              <string>None（无）</string>
@@ -108,24 +108,24 @@ padding:0 3px;
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="3" column="0">
+           <widget class="QRadioButton" name="radioButton_7">
+            <property name="text">
+             <string>face（面）</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
            <widget class="QRadioButton" name="radioButton_5">
             <property name="text">
              <string>normal（点法线）</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="1" column="1">
            <widget class="QRadioButton" name="radioButton_6">
             <property name="text">
              <string>edge（边）</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QRadioButton" name="radioButton_7">
-            <property name="text">
-             <string>face（面）</string>
             </property>
            </widget>
           </item>
@@ -226,17 +226,17 @@ padding:0 3px;
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushButton_12">
-            <property name="text">
-             <string>Remove</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="pushButton_11">
             <property name="text">
              <string>TargetWeld</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="text">
+             <string>Remove</string>
             </property>
            </widget>
           </item>
@@ -247,31 +247,10 @@ padding:0 3px;
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_14">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="pushButton_13">
-            <property name="text">
-             <string>PushButton</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="2">
            <widget class="QPushButton" name="pushButton_8">
             <property name="text">
              <string>Relax</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="QPushButton" name="pushButton_15">
-            <property name="text">
-             <string>PushButton</string>
             </property>
            </widget>
           </item>
@@ -456,7 +435,7 @@ padding:0 3px;
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
-        <widget class="QGroupBox" name="">
+        <widget class="QGroupBox" name="groupBox">
          <property name="title">
           <string>Material(材质)</string>
          </property>
@@ -493,7 +472,7 @@ padding:0 3px;
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="">
+        <widget class="QGroupBox" name="groupBox">
          <property name="title">
           <string>UV</string>
          </property>

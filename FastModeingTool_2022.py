@@ -8,7 +8,7 @@ from PySide2 import QtCore
 from PySide2.QtUiTools import QUiLoader
 import qtmax
 from pymxs import runtime as rt
-
+from PySide2 import QtWidgets
 import pymxs
 '''
 3dmax2022  
@@ -47,7 +47,7 @@ class TestDialog(QDockWidget):
 
         # 设置窗口属性
         self.setWindowFlags(QtCore.Qt.Tool)
-        self.setWindowTitle("技术中心_FastMdeingTool")
+        self.setWindowTitle("技术中心_FastModeingTool")
 
 
         self.creatwidget()
@@ -92,6 +92,17 @@ class TestDialog(QDockWidget):
         self.checkbox_yUp = self.ui.findChild(QCheckBox, "checkBox")
         # self.button_save_selectfile = self.ui.findChild(QPushButton, "pushButton_17")
 
+        self.button_one_material = self.ui.findChild(QPushButton,"pushButton_24")
+        self.button_mulity_material = self.ui.findChild(QPushButton, "pushButton_26")
+        self.button_clear_material = self.ui.findChild(QPushButton, "pushButton_27")
+        self.button_clear_materialColor = self.ui.findChild(QPushButton, "pushButton_28")
+
+        self.button_open_uv = self.ui.findChild(QPushButton, "pushButton_29")
+        self.button_bake = self.ui.findChild(QPushButton, "pushButton_30")
+
+        self.button_clone_node = self.ui.findChild(QPushButton, "pushButton_18")
+
+
     def creatlayout(self):
         self.radio_coord_local.toggled.connect(lambda: self.set_coord(0))
         self.radio_coord_view.toggled.connect(lambda: self.set_coord(1))
@@ -123,6 +134,15 @@ class TestDialog(QDockWidget):
         self.button_exportCharacter.clicked.connect(self.export_fbx_unity_character)
         self.button_exportEnvirtonment.clicked.connect(self.export_fbx_unity_envir)
 
+        self.button_one_material.clicked.connect(self.one_material)
+        self.button_mulity_material.clicked.connect(self.mulity_material)
+        self.button_clear_material.clicked.connect(self.clear_material)
+        self.button_clear_materialColor.clicked.connect(self.clear_materialColor)
+
+        self.button_open_uv.clicked.connect(self.open_uv)
+        self.button_bake.clicked.connect(self.bake)
+
+        self.button_clone_node.clicked.connect(self.clone_node)
 
     '''
     set_coord
@@ -259,6 +279,13 @@ class TestDialog(QDockWidget):
         output_path = output_path
         self.lineedit_exportPath.setText(output_path)
 
+    def RotatePivotOnly(self, obj, rotation):
+        rotValInv = rt.inverse(rt.r2q(rotation))
+        with pymxs.animate(False):
+            obj.rotation *= rotValInv
+            obj.objectoffsetpos *= rotValInv
+            obj.objectoffsetrot *= rotValInv
+
 
     '''
     导出模块：fbx设置
@@ -347,12 +374,18 @@ class TestDialog(QDockWidget):
             rt.messageBox("没有选择物体")
 
 
+    '''
+    打开烘培
+    '''
     def bake(self):
 
         rt.execute('actionMan.executeAction 1858480148 "23214332"')
 
 
 
+    '''
+    打开uv
+    '''
     def open_uv(self):
         a = rt.selection
         uv = rt.Unwrap_UVW()
@@ -362,6 +395,69 @@ class TestDialog(QDockWidget):
         rt.setCommandPanelTaskMode(rt.name('create'))
         rt.setCommandPanelTaskMode(rt.name('modify'))
         uv.edit()
+
+
+
+    '''
+    材质：统一一个材质
+    '''
+
+    def one_material(self):
+        with pymxs.undo(True):
+            a = rt.selection
+            m = rt.ai_Standard_Surface()
+            for x in a:
+                x.material = m
+            rt.redrawViews()  # 视图更新
+
+    '''
+    材质：复合材质
+    '''
+    def mulity_material(self):
+        with pymxs.undo(True):
+            a = rt.selection
+            for x in a:
+                m = rt.ai_Standard_Surface()
+                m.name = "M_" + x.name
+                m.base_color = rt.color(random.randint(0,255),random.randint(0,255),random.randint(0,255))
+                m.specular = 0.0
+                x.material = m
+            rt.redrawViews()  # 视图更新
+        return
+
+
+
+
+    '''
+    材质：清理材质
+    '''
+    def clear_material(self):
+        with pymxs.undo(True):
+            for obj in rt.selection:
+                obj.material = rt.undefined
+            rt.redrawViews()
+
+
+
+
+
+    '''
+    材质：颜色设为灰色
+    '''
+    def clear_materialColor(self):
+        with pymxs.undo(True):
+            for obj in rt.selection:
+                obj.material.base_color = rt.color(150,150,150)
+            rt.redrawViews()
+
+    '''
+    复制
+    '''
+    def clone_node(self):
+        with pymxs.undo(True):
+            rt.copy(rt.selection)
+
+
 
 if __name__ == '__main__':
 
