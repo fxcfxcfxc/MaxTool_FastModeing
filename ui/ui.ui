@@ -23,7 +23,7 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab">
       <property name="styleSheet">
@@ -161,24 +161,10 @@ padding:0 3px;
           <string>变换</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_21">
-            <property name="text">
-             <string>塌陷</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="pushButton_18">
             <property name="text">
              <string>复制</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="pushButton_19">
-            <property name="text">
-             <string>镜像复制</string>
             </property>
            </widget>
           </item>
@@ -199,7 +185,21 @@ padding:0 3px;
           <item row="2" column="1">
            <widget class="QPushButton" name="pushButton_25">
             <property name="text">
-             <string>坐标到中心</string>
+             <string>坐标系到中心</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="pushButton_21">
+            <property name="text">
+             <string>塌陷</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pushButton_19">
+            <property name="text">
+             <string>坐标系归零</string>
             </property>
            </widget>
           </item>
@@ -250,7 +250,7 @@ padding:0 3px;
           <item row="1" column="2">
            <widget class="QPushButton" name="pushButton_8">
             <property name="text">
-             <string>Relax</string>
+             <string>MakePlane_One</string>
             </property>
            </widget>
           </item>
@@ -374,7 +374,7 @@ padding:0 3px;
             <item>
              <widget class="QPushButton" name="pushButton_9">
               <property name="text">
-               <string>FBX_角色</string>
+               <string>FBX_角色(0,0,0)</string>
               </property>
              </widget>
             </item>

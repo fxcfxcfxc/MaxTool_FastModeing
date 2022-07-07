@@ -51,7 +51,7 @@ class TestDialog(QDockWidget):
 
 
         self.creatwidget()
-        self.creatlayout()
+        self.creatconnection()
 
 
 
@@ -101,9 +101,17 @@ class TestDialog(QDockWidget):
         self.button_bake = self.ui.findChild(QPushButton, "pushButton_30")
 
         self.button_clone_node = self.ui.findChild(QPushButton, "pushButton_18")
+        self.button_pivot_to_zero = self.ui.findChild(QPushButton, "pushButton_19")
+
+        self.button_cut = self.ui.findChild(QPushButton,"pushButton_3")
+        self.button_LoopEdge = self.ui.findChild(QPushButton, "pushButton_4")
+        self.button_MergePoint = self.ui.findChild(QPushButton, "pushButton_5")
+        self.button_Remove = self.ui.findChild(QPushButton, "pushButton_12")
+        self.button_TargetWeld = self.ui.findChild(QPushButton, "pushButton_11")
+        self.MakePlane_One = self.ui.findChild(QPushButton, "pushButton_8")
 
 
-    def creatlayout(self):
+    def creatconnection(self):
         self.radio_coord_local.toggled.connect(lambda: self.set_coord(0))
         self.radio_coord_view.toggled.connect(lambda: self.set_coord(1))
         self.radio_coord_world.toggled.connect(lambda: self.set_coord(2))
@@ -143,6 +151,15 @@ class TestDialog(QDockWidget):
         self.button_bake.clicked.connect(self.bake)
 
         self.button_clone_node.clicked.connect(self.clone_node)
+
+        self.button_cut.clicked.connect(lambda: self.poly_modeing_action(0))
+        self.button_LoopEdge.clicked.connect(lambda: self.poly_modeing_action(1))
+        self.button_MergePoint.clicked.connect(lambda: self.poly_modeing_action(2))
+        self.button_Remove.clicked.connect(lambda: self.poly_modeing_action(3))
+        self.button_TargetWeld.clicked.connect(lambda: self.poly_modeing_action(4))
+        self.MakePlane_One.clicked.connect(lambda: self.poly_modeing_action(5))
+
+        self.button_pivot_to_zero.clicked.connect(self.pivot_to_zero)
 
     '''
     set_coord
@@ -456,6 +473,30 @@ class TestDialog(QDockWidget):
     def clone_node(self):
         with pymxs.undo(True):
             rt.copy(rt.selection)
+
+
+    def  poly_modeing_action(self,value):
+        if(value == 0):
+            rt.execute('macros.run "Ribbon - Modeling" "CutsCut"')
+        if (value == 1):
+            rt.execute('macros.run "PolyTools" "SwiftLoop"')
+        if (value == 2):
+            rt.execute('macros.run "Ribbon - Modeling" "GeometryCollapse"')
+        if (value == 3):
+            rt.execute('macros.run "Ribbon - Modeling" "VertexRemove"')
+        if (value == 4):
+            rt.execute('macros.run "Editable Polygon Object" "EPoly_TargetWeld"')
+        if (value == 5):
+            with pymxs.undo(True):
+                rt.execute('$.EditablePoly.ConvertSelection #Face #Edge')
+                rt.execute('$.EditablePoly.makeSmoothEdges 1')
+                rt.execute('$.EditablePoly.ConvertSelectionToBorder #Face #Edge')
+                rt.execute('$.EditablePoly.makeHardEdges 1')
+                rt.execute('$.EditablePoly.makePlanar #Face')
+
+    def  pivot_to_zero(self):
+        for x in rt.selection:
+            x.pivot = rt.Point3(0,0,0)
 
 
 
