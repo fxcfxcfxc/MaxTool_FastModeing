@@ -110,6 +110,11 @@ class TestDialog(QDockWidget):
         self.button_TargetWeld = self.ui.findChild(QPushButton, "pushButton_11")
         self.MakePlane_One = self.ui.findChild(QPushButton, "pushButton_8")
 
+        self.button_plane = self.ui.findChild(QPushButton, "pushButton_13")
+        self.button_box = self.ui.findChild(QPushButton, "pushButton_14")
+        self.button_cyliner = self.ui.findChild(QPushButton, "pushButton_15")
+        self.button_sphere = self.ui.findChild(QPushButton, "pushButton_31")
+
 
     def creatconnection(self):
         self.radio_coord_local.toggled.connect(lambda: self.set_coord(0))
@@ -160,6 +165,11 @@ class TestDialog(QDockWidget):
         self.MakePlane_One.clicked.connect(lambda: self.poly_modeing_action(5))
 
         self.button_pivot_to_zero.clicked.connect(self.pivot_to_zero)
+
+        self.button_plane.clicked.connect(lambda: self.creat_simple_poly(0))
+        self.button_box.clicked.connect(lambda: self.creat_simple_poly(1))
+        self.button_cyliner.clicked.connect(lambda: self.creat_simple_poly(2))
+        self.button_sphere.clicked.connect(lambda: self.creat_simple_poly(3))
 
     '''
     set_coord
@@ -474,7 +484,9 @@ class TestDialog(QDockWidget):
         with pymxs.undo(True):
             rt.copy(rt.selection)
 
-
+    '''
+    模型操作命令集合
+    '''
     def  poly_modeing_action(self,value):
         if(value == 0):
             rt.execute('macros.run "Ribbon - Modeling" "CutsCut"')
@@ -497,6 +509,35 @@ class TestDialog(QDockWidget):
     def  pivot_to_zero(self):
         for x in rt.selection:
             x.pivot = rt.Point3(0,0,0)
+
+
+    '''
+    maya模式快速创建基本体
+    '''
+    def  creat_simple_poly(self,value):
+        if(value == 0 ):
+            with pymxs.undo(True):
+                a = rt.plane()
+                a.lengthsegs = 1
+                a.widthsegs = 1
+                rt.redrawViews()
+
+        if(value == 1):
+            with pymxs.undo(True):
+                a = rt.box()
+                rt.redrawViews()
+
+        if (value == 2):
+            with pymxs.undo(True):
+                a = rt.cylinder()
+                a.sides = 12
+                rt.redrawViews()
+
+        if (value == 3):
+            with pymxs.undo(True):
+                a = rt.sphere()
+                a.segs = 12
+                rt.redrawViews()
 
 
 
