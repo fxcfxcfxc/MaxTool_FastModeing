@@ -6,7 +6,7 @@ from PySide2.QtWidgets import QPushButton,QRadioButton,QSlider,QLineEdit,QCheckB
 from PySide2.QtCore import QFile
 from PySide2 import QtCore
 from PySide2.QtUiTools import QUiLoader
-import qtmax
+#import qtmax
 from pymxs import runtime as rt
 from PySide2 import QtWidgets
 import pymxs
@@ -577,7 +577,7 @@ if __name__ == '__main__':
 
     except:
         pass
-    main_window2 = qtmax.GetQMaxMainWindow()
+    main_window2 = MaxPlus.GetQMaxMainWindow()
     Fasttool_window= TestDialog(parent=main_window2)
     Fasttool_window.setFloating(True)
     Fasttool_window.show()
